@@ -13,8 +13,6 @@ public enum PlayerType {
     private final PLayerSkillType skillType1;
     private final PLayerSkillType skillType2;
 
-    
-
     PlayerType (String atlasPath, int health,float width, float height, float speed, PLayerSkillType skillType1, PLayerSkillType skillType2) {
         this.atlasPath = atlasPath;
         this.health = health;
@@ -40,6 +38,7 @@ public enum PlayerType {
     public float getWidth() {
         return width;
     }
+
     public float getHeight() {
         return height;
     }

@@ -67,8 +67,6 @@ public class MainGameScreen extends AbstractScreen<GameUI> implements MapListene
 			} // them am thanh map
 		}
 	}
-	
-	
 
 	@Override
 	public void dispose() {

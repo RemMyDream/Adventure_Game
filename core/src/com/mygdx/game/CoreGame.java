@@ -27,8 +27,6 @@ import com.mygdx.game.view.GameRenderer;
 import java.util.EnumMap;
 
 public class CoreGame extends Game {
-
-
 	private static final String TAG = CoreGame.class.getSimpleName();
 	
 	private SpriteBatch spriteBatch;
@@ -102,9 +100,7 @@ public class CoreGame extends Game {
 		loadAsset.getLoadingAssetUI();
 		loadAsset.getGameAssetUI();
 		stage = new Stage(new FitViewport(1280, 720), spriteBatch);
-		
 
-		
 		//audio
 		audioManager = new AudioManager(this);
 		
@@ -115,7 +111,6 @@ public class CoreGame extends Game {
 		//set first screen
 		gameCamera = new OrthographicCamera();
 		screenViewport = new FitViewport(16, 9, gameCamera);
-
 
 		//entity
 		ecsEngine = new ECSEngine(this);
@@ -136,13 +131,11 @@ public class CoreGame extends Game {
 		return stage;
 	}
 
-
 	public Skin getSkin() {
 		return skin;
 	}
 	
 	public void setSkin(Skin skin) {
-
 		this.skin = skin;
 	}
 
@@ -300,5 +293,4 @@ public class CoreGame extends Game {
 	public void switchSound() {
 		audioManager.musicEnabled = audioManager.musicEnabled ? false : true;
 	}
-
 }

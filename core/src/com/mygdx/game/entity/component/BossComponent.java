@@ -29,6 +29,7 @@ public class BossComponent extends EntityComponent {
         attack = 0;
         type = null;
     }
+
     public void resetState() {
         isCharge = false;
         isAttack = false;

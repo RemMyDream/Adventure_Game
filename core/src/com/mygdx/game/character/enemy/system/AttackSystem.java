@@ -11,7 +11,8 @@ import com.mygdx.game.view.DirectionType;
 public class AttackSystem {
     private static CoreGame thisGame;
     public static void attackSystem(CoreGame game, EnemyComponent enemyCom, Box2DComponent b2dComponent) {
-        if (thisGame == null) thisGame = game;
+        if (thisGame == null)
+            {thisGame = game;}
 
         if(enemyCom.isAttacking) {
             b2dComponent.body.applyLinearImpulse(-b2dComponent.body.getLinearVelocity().x*b2dComponent.body.getMass(),

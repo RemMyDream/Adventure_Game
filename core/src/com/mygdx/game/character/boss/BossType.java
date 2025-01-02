@@ -13,7 +13,7 @@ public enum BossType {
     private final BossSkillType skill1;
     private final BossSkillType skill2;
 
-    BossType(String atlasPath, int width, int height, int health, int damage, float speed,float reload, BossSkillType skill1, BossSkillType skill2) {
+    BossType(String atlasPath, int width, int height, int health, int damage, float speed, float reload, BossSkillType skill1, BossSkillType skill2) {
         this.atlasPath = atlasPath;
         this.width = width;
         this.height = height;

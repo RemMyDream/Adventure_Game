@@ -14,7 +14,6 @@ public enum EnemyDetailSkillType {
     private final int damage;
     private final float speed;
     EnemyDetailSkillType(EffectType effectType, int width, int height, int damage, float speed) {
-
         this.effectType = effectType;
         this.width = width;
         this.height = height;

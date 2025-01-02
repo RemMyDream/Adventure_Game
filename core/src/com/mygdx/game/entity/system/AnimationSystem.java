@@ -8,7 +8,7 @@ import com.mygdx.game.entity.ECSEngine;
 import com.mygdx.game.entity.component.AnimationComponent;
 
 public class AnimationSystem extends IteratingSystem {
-
+	//hệ thống này sẽ xử lý các entities có AnimationComponent.
 	public AnimationSystem(CoreGame game) {
 		super(Family.all(AnimationComponent.class).get());
 	}

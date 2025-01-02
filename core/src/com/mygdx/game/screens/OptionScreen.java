@@ -30,7 +30,6 @@ public class OptionScreen extends AbstractScreen<OptionUI>{
 
     @Override
     public void keyPressed(InputManager manager, GameKey gameKey) {
-
     }
 
     @Override

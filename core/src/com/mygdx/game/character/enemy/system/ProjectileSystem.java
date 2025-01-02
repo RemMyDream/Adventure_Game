@@ -30,20 +30,20 @@ public class ProjectileSystem {
                     case SHURIKEN:
                         game.getAudioManager().playAudio(AudioType.POWERUP);
                         break;
-
                 }
 
                 enemyCom.timeSinceLastShot = 0;
                 enemyCom.timeDelayForBullet = 1f;
             }
-        } else if (Math.abs(playerPos.x - enemyPos.x) < 0.5f && Math.abs(playerPos.y - enemyPos.y) < 3.5f) {
-            // Nếu có, Boss sẽ bắn đạn theo phương ngang đó
+        }
+        else if (Math.abs(playerPos.x - enemyPos.x) < 0.5f && Math.abs(playerPos.y - enemyPos.y) < 3.5f) {
+            // Nếu có, Boss sẽ bắn đạn theo phương thẳng đứng
             Vector2 dir = new Vector2(0, playerPos.y > enemyPos.y ? 1 : -1);
             if (enemyCom.timeSinceLastShot >= 2) {
                 DamageArea area = new DamageArea(enemyPos, CoreGame.BIT_ENEMY, enemyCom.direction, type.getWidth(), type.getHeight(), type.getDamage(), type.getEffectType(), true, type.getSpeed(),false);
                 game.getEcsEngine().createDamageArea(area);
-                enemyCom.timeSinceLastShot = 0;
-                enemyCom.timeDelayForBullet = 1f;
+                    enemyCom.timeSinceLastShot = 0;
+                    enemyCom.timeDelayForBullet = 1f;
             }
         }
     }

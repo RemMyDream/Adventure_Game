@@ -20,7 +20,7 @@ import com.mygdx.game.entity.component.EnemyComponent;
 import com.mygdx.game.entity.component.PlayerComponent;
 import com.mygdx.game.view.DirectionType;
 
-public class EnemyAttackSystem extends IteratingSystem {
+public class    EnemyAttackSystem extends IteratingSystem {
 
     private final CoreGame game;
     public EnemyAttackSystem(CoreGame game) {

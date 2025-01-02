@@ -14,7 +14,7 @@ public class DamageArea {
     public int width;
     public int height;
     public boolean upgrade;
-    public DamageArea(Vector2 position,short owner, DirectionType direction, int width, int height, int damage, EffectType type, boolean isBullet, float speed, boolean upgrade) {
+    public DamageArea(Vector2 position, short owner, DirectionType direction, int width, int height, int damage, EffectType type, boolean isBullet, float speed, boolean upgrade) {
         this.position = position;
         this.owner = owner;
         this.direction = direction;

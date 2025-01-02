@@ -10,7 +10,6 @@ import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.freetype.FreeTypeFontGenerator;
 import com.badlogic.gdx.scenes.scene2d.ui.Skin;
 import com.badlogic.gdx.utils.ObjectMap;
-import com.badlogic.gdx.utils.ObjectMap;
 
 public class LoadAsset {
 	final private AssetManager assetManager;
@@ -25,7 +24,7 @@ public class LoadAsset {
 	
 	public void getLoadingAssetUI() {
 		final ObjectMap<String, Object> resources = new ObjectMap<String, Object>();
-		FreeTypeFontGenerator fontGenerator = new FreeTypeFontGenerator(Gdx.files.internal("C:\\Users\\Admin\\Downloads\\AdventureTime-master\\assets\\HUD\\Font\\NormalFont.ttf"));
+		FreeTypeFontGenerator fontGenerator = new FreeTypeFontGenerator(Gdx.files.internal("HUD/Font/NormalFont.ttf"));
 		FreeTypeFontGenerator.FreeTypeFontParameter fontParameter = new FreeTypeFontGenerator.FreeTypeFontParameter();
 		
 		fontParameter.minFilter = Texture.TextureFilter.Linear;

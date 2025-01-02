@@ -22,13 +22,14 @@ import com.mygdx.game.view.AnimationType;
 import com.mygdx.game.view.DirectionType;
 
 public class GiantBlueSamurai {
-    public static boolean attacking = false;
-    public static boolean isUsedSkill2 = false;
-    private static boolean isHitted = false;
+    public static boolean attacking = false;  //Kiem tra boss co dang tan cong khong ?
+    public static boolean isUsedSkill2 = false; //Kiem tra co dang su dung skill khong?
+    private static boolean isHitted = false; //Danh dau khi boss bi tan cong
     private static CoreGame thisGame;
     private static SteeringAcceleration<Vector2> steeringOutput = new SteeringAcceleration<>(new Vector2());
 
     public static void GBS_movement(CoreGame game, Entity entity, Entity player, float deltaTime) {
+        //Xu ly logic di chuyen cua boss dua tren khoang cach so voi nguoi choi
         BossComponent bossCmp = ECSEngine.bossCmpMapper.get(entity);
         Box2DComponent b2dCmp = ECSEngine.box2dCmpMapper.get(entity);
         if (player == null) return;

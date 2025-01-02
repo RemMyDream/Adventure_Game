@@ -33,6 +33,7 @@ public class GiantSpirit {
     private static Vector2 position = new Vector2();
 
     public static void GS_movement(CoreGame game, Entity entity, Entity player, float deltaTime) {
+        //Xu ly logic chuyen dong cua boss dua tren khoang cach so voi nguoi choi
         BossComponent bossCmp = ECSEngine.bossCmpMapper.get(entity);
         Box2DComponent b2dCmp = ECSEngine.box2dCmpMapper.get(entity);
         if (player == null) return;
@@ -46,33 +47,36 @@ public class GiantSpirit {
         Vector2 bossPos = b2dCmp.body.getPosition();
         float distance = playerPos.dst(bossPos);
 
-        if (bossCmp.isCharge) { // nap don danh
+        if (bossCmp.isCharge) { // Nếu boss đang nạp đòn (isCharge), sau khi hoạt ảnh kết thúc, boss chuyển sang trạng thái attack.
             if (bossCmp.time >= 1) {
-                isCharge = false;
                 bossCmp.isSkill1 = true;
                 bossCmp.isCharge = false;
                 bossCmp.isAttack = true;
             }
-        } else if (bossCmp.isAttack) {
+        }
+
+        else if (bossCmp.isAttack) { //Nếu boss tấn công (isAttack), sau khi tấn công xong, boss quay lại trạng thái di chuyển hoặc chuẩn bị kỹ năng.
             if (bossCmp.time >= 3) {
                 bossCmp.isAttack = false;
             }
         }
 
-        if (bossCmp.life <= bossCmp.maxLife/2) {
+        if (bossCmp.life <= bossCmp.maxLife/2) { //Nếu boss có lượng máu dưới 50%, Skill2 sẽ được kích hoạt.
             bossCmp.isSkill2 = true;
         }
-        if (bossCmp.isHit) { // bi danh trung
 
+        if (bossCmp.isHit) { // Nếu boss bị tấn công (isHit), trạng thái hit sẽ được kích hoạt và reset lại.
             if (aniCmp.isFinished && aniCmp.aniType == AnimationType.B_HIT) {
                 bossCmp.isHit = false;
             }
-        } else if (bossCmp.isReady(deltaTime) && !bossCmp.isCharge && !bossCmp.isAttack) {
+        }
+
+        else if (bossCmp.isReady(deltaTime) && !bossCmp.isCharge && !bossCmp.isAttack) {
             Arrive<Vector2> arriveBehavior = new Arrive<>(enemySteerable, playerSteerable)
                     .setArrivalTolerance(0.1f)
                     .setDecelerationRadius(3)
                     .setTimeToTarget(0.1f);
-            arriveBehavior.calculateSteering(steeringOutput);
+            arriveBehavior.calculateSteering(steeringOutput); //Tính toán lực cần thiết để boss đi đến mục tiêu
             Vector2 force = steeringOutput.linear.scl(deltaTime);
             force.set(force.x, force.y);
             b2dCmp.body.applyForceToCenter(force, true);
@@ -104,9 +108,9 @@ public class GiantSpirit {
         Box2DComponent b2dCmp = ECSEngine.box2dCmpMapper.get(entity);
 
         if (bossCmp.isCharge) {
-            if (!isCharge)
+            if (!isCharge) {
                 chargeSkill(entity);
-
+            }
         }
         if (bossCmp.isSkill1 && bossCmp.isAttack) {
             createSkill1(entity);
@@ -123,6 +127,7 @@ public class GiantSpirit {
             animationCmp.aniType = AnimationType.DOWN;
         }
     }
+
     private static void chargeSkill(Entity entity) {
         Box2DComponent box2DCmp = ECSEngine.box2dCmpMapper.get(entity);
         BossComponent bossCmp = ECSEngine.bossCmpMapper.get(entity);
@@ -146,8 +151,8 @@ public class GiantSpirit {
     private static void createSkill2(Entity entity) {
         BossComponent bossCmp = ECSEngine.bossCmpMapper.get(entity);
         Box2DComponent b2dCmp = ECSEngine.box2dCmpMapper.get(entity);
-        int dir[][] = {{1, 1}, {1, -1}, {-1, -1}, {-1, 1}};
-        EnemyType enemyType[] = {EnemyType.SPIRIT, EnemyType.SPIRIT, EnemyType.SKULLBLUE, EnemyType.SKULL};
+        int[][] dir = {{1, 1}, {1, -1}, {-1, -1}, {-1, 1}};
+        EnemyType[] enemyType = {EnemyType.SPIRIT, EnemyType.SPIRIT, EnemyType.SKULLBLUE, EnemyType.SKULL};
         for (int i=0; i<4; i++) {
             Vector2 position = new Vector2(b2dCmp.body.getPosition().x + dir[i][0] * b2dCmp.width , b2dCmp.body.getPosition().y + dir[i][1] * b2dCmp.height);
             Enemy enemy = new Enemy(enemyType[i], position, 16, 16);

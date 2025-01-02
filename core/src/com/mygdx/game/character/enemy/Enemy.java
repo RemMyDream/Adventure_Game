@@ -8,13 +8,11 @@ import com.mygdx.game.map.GameObjectType;
 public class Enemy extends Charater {
     private final EnemyType type;
 
-
     public Enemy(EnemyType type, Vector2 position, float width, float height) {
         super(position, width, height);
         this.type = type;
     }
 
-    public EnemyType getType() {
-        return type;
+    public EnemyType getType() {return type;
     }
 }

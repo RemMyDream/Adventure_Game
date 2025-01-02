@@ -1,7 +1,7 @@
 //Steerable Agent
 package com.mygdx.game.character.ai;
 
-import com.badlogic.gdx.ai.steer.Steerable;
+import com.badlogic.gdx.ai.steer.Steerable; //Điều hướng
 import com.badlogic.gdx.ai.utils.Location;
 import com.badlogic.gdx.math.MathUtils;
 import com.badlogic.gdx.math.Vector2;
@@ -54,9 +54,7 @@ public class SteerableAgent implements Steerable<Vector2> {
     }
 
     @Override
-    public void setZeroLinearSpeedThreshold(float v) {
-
-    }
+    public void setZeroLinearSpeedThreshold(float v) {}
 
     @Override
     public float getMaxLinearSpeed() {

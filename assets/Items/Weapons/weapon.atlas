@@ -1,0 +1,103 @@
+weapon.png
+size: 1947, 98
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+Axe
+  rotate: false
+  xy: 1, 1
+  size: 78, 66
+  orig: 78, 66
+  offset: 0, 0
+  index: -1
+AxeInHand
+  rotate: false
+  xy: 140, 1
+  size: 66, 48
+  orig: 66, 48
+  offset: 0, 0
+  index: -1
+BigSword
+  rotate: false
+  xy: 279, 1
+  size: 96, 42
+  orig: 96, 42
+  offset: 0, 0
+  index: -1
+BigSwordInHand
+  rotate: false
+  xy: 418, 1
+  size: 42, 72
+  orig: 42, 72
+  offset: 0, 0
+  index: -1
+Fork
+  rotate: false
+  xy: 557, 1
+  size: 96, 42
+  orig: 96, 42
+  offset: 0, 0
+  index: -1
+ForkInHand
+  rotate: false
+  xy: 696, 1
+  size: 42, 72
+  orig: 42, 72
+  offset: 0, 0
+  index: -1
+Hammer
+  rotate: false
+  xy: 835, 1
+  size: 96, 54
+  orig: 96, 54
+  offset: 0, 0
+  index: -1
+HammerInHand
+  rotate: false
+  xy: 974, 1
+  size: 54, 54
+  orig: 54, 54
+  offset: 0, 0
+  index: -1
+Lance
+  rotate: false
+  xy: 1113, 1
+  size: 138, 36
+  orig: 138, 36
+  offset: 0, 0
+  index: -1
+LanceInHand
+  rotate: false
+  xy: 1252, 1
+  size: 36, 96
+  orig: 36, 96
+  offset: 0, 0
+  index: -1
+Sai
+  rotate: false
+  xy: 1391, 1
+  size: 78, 42
+  orig: 78, 42
+  offset: 0, 0
+  index: -1
+SaiInHand
+  rotate: false
+  xy: 1530, 1
+  size: 42, 48
+  orig: 42, 48
+  offset: 0, 0
+  index: -1
+Sword2
+  rotate: false
+  xy: 1669, 1
+  size: 90, 36
+  orig: 90, 36
+  offset: 0, 0
+  index: -1
+Sword2InHand
+  rotate: false
+  xy: 1808, 1
+  size: 36, 66
+  orig: 36, 66
+  offset: 0, 0
+  index: -1
